@@ -28,6 +28,21 @@ var main = function() {
 };
 
 
+var toggle = function(id, value) {
+    var canvas = $('canvas[id="' + id + '"]')[0];
+    if (canvas === undefined) {
+        return
+    }
+    var $canvas = $(canvas);
+    if (value === undefined) {
+        return $canvas.data('gauge').value;
+    }
+    $canvas.data('gauge').set(value);
+    return value;
+}
+
+
 exports.main = main;
+exports.toggle = toggle;
 
 window.document.addEventListener('DOMContentLoaded', main);
