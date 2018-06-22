@@ -17,9 +17,9 @@ with open(join(dirname(__file__), 'static', 'index.html')) as fd:
     index_html = fd.read()
 
 webpack_js = get_distribution('gaugesrv').get_metadata(
-    'calmjs_artifacts/webpack.js')
+    'calmjs_artifacts/webpack.min.js')
 gaugesrv_css = get_distribution('gaugesrv').get_metadata(
-    'calmjs_artifacts/styles.css')
+    'calmjs_artifacts/styles.min.css')
 
 
 @app.route('/gaugesrv.js')

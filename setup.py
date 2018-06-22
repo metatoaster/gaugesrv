@@ -84,7 +84,9 @@ setup(
         ],
         'calmjs.artifacts': [
             'webpack.js = calmjs.webpack.artifact:complete_webpack',
+            'webpack.min.js = calmjs.webpack.artifact:optimize_webpack',
             'styles.css = calmjs.sassy.artifact:complete_css',
+            'styles.min.css = calmjs.sassy.artifact:complete_compressed_css',
         ],
         'console_scripts': [
             'gaugesrv-demo = gaugesrv.app:main',
