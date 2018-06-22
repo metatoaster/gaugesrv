@@ -87,6 +87,9 @@ setup(
             'webpack.js = calmjs.webpack.artifact:complete_webpack',
             'styles.css = calmjs.sassy.artifact:complete_css',
         ],
+        'console_scripts': [
+            'gaugesrv-demo = gaugesrv.app:main',
+        ],
     },
     test_suite="gaugesrv.tests.make_suite",
 )
