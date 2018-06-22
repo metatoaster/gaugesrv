@@ -43,7 +43,6 @@ setup(
     namespace_packages=[],
     zip_safe=False,
     install_requires=[
-        'calmjs',
         'sanic',
     ],
     package_json=package_json,
