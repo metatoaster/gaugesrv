@@ -57,6 +57,9 @@ setup(
         'webpack': [
              'calmjs.webpack',
         ],
+        'scss': [
+             'calmjs.sassy[libsass]',
+        ],
     },
     extras_calmjs={
         'node_modules': {
@@ -67,8 +70,12 @@ setup(
     include_package_data=True,
     python_requires='>=3.4',
     calmjs_module_registry=['calmjs.module'],
+    calmjs_scss_module_registry=['calmjs.scss'],
     entry_points={
         'calmjs.module': [
+            'gaugesrv = gaugesrv',
+        ],
+        'calmjs.scss': [
             'gaugesrv = gaugesrv',
         ],
     },
