@@ -50,6 +50,7 @@ setup(
     extras_require={
         'dev': [
             'calmjs.dev',
+            'aiohttp',
         ],
         'rjs': [
              'calmjs.rjs',
