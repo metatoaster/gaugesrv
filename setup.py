@@ -71,12 +71,17 @@ setup(
     python_requires='>=3.4',
     calmjs_module_registry=['calmjs.module'],
     calmjs_scss_module_registry=['calmjs.scss'],
+    build_calmjs_artifacts=True,
     entry_points={
         'calmjs.module': [
             'gaugesrv = gaugesrv',
         ],
         'calmjs.scss': [
             'gaugesrv = gaugesrv',
+        ],
+        'calmjs.artifacts': [
+            'webpack.js = calmjs.webpack.artifact:complete_webpack',
+            'styles.css = calmjs.sassy.artifact:complete_css',
         ],
     },
     test_suite="gaugesrv.tests.make_suite",
