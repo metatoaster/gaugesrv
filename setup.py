@@ -76,6 +76,9 @@ setup(
         'calmjs.module': [
             'gaugesrv = gaugesrv',
         ],
+        'calmjs.module.tests': [
+            'gaugesrv.tests = gaugesrv.tests',
+        ],
         'calmjs.scss': [
             'gaugesrv = gaugesrv',
         ],
