@@ -17,6 +17,13 @@ Programming Language :: Python :: Implementation :: PyPy
 Topic :: Utilities
 """.strip().splitlines()
 
+package_json = {
+    'dependencies': {
+        'gaugeJS': '~1.3.0',
+        'jquery': '~3.0.0',
+    },
+}
+
 setup(
     name='gaugesrv',
     version=version,
@@ -36,12 +43,34 @@ setup(
     namespace_packages=[],
     zip_safe=False,
     install_requires=[
+        'calmjs',
+        'sanic',
     ],
+    package_json=package_json,
     extras_require={
+        'dev': [
+            'calmjs.dev',
+        ],
+        'rjs': [
+             'calmjs.rjs',
+        ],
+        'webpack': [
+             'calmjs.webpack',
+        ],
+    },
+    extras_calmjs={
+        'node_modules': {
+            'gaugeJS': 'gaugeJS/dist/gauge.js',
+            'jquery': 'jquery/dist/jquery.js',
+        },
     },
     include_package_data=True,
     python_requires='>=3.4',
+    calmjs_module_registry=['calmjs.module'],
     entry_points={
+        'calmjs.module': [
+            'gaugesrv = gaugesrv',
+        ],
     },
     test_suite="gaugesrv.tests.make_suite",
 )
